@@ -24,65 +24,49 @@ The project follows a RAG architecture:
 2.  **Vector Storage**: These embeddings are stored in a Pinecone serverless index for fast similarity searches.
 3.  **Retrieval & Generation**: When a user asks a question, it's embedded and used to retrieve relevant chunks from Pinecone. These chunks, along with the original question, are passed to the Gemini LLM to generate a final, context-grounded answer.
 
----
+# How to run?
+### STEPS:
 
-## Setup and Installation
+Clone the repository
 
-Follow these steps to set up and run the project locally.
-
-### 1. Clone the Repository
 ```bash
-git clone https://github.com/Aditya-Rai0/CareReply---AI-Patient-Message-Responder.git
+Project repo: https://github.com/
+```
+### STEP 01- Create a virtual environment after opening the repository
 
-2. Create a Virtual Environment
-It's recommended to use a virtual environment to manage dependencies.
-
-Bash
-
+```bash
 python -m venv .venv
-Activate the environment:
+```
 
-Windows:
-
-Bash
-
+```bash
 .\.venv\Scripts\activate
-macOS / Linux:
+```
 
-Bash
 
-source .venv/bin/activate
-3. Install Dependencies
-Install all the required Python packages.
-
-Bash
-
+### STEP 02- install the requirements
+```bash
 pip install -r requirements.txt
-(Note: If you don't have a requirements.txt file, you can create one with pip freeze > requirements.txt after installing all necessary packages.)
+```
 
-4. Set Up Environment Variables
-Create a file named .env in the root directory of the project and add your API keys:
 
-GOOGLE_API_KEY="your_google_api_key_here"
-PINECONE_API_KEY="your_pinecone_api_key_here"
+### Create a `.env` file in the root directory and add your Pinecone & openai credentials as follows:
 
-How to Run the Project
-The project has two main parts: indexing the data and running the web application.
+```ini
+PINECONE_API_KEY = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+OPENAI_API_KEY = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+```
 
-Step 1: Create the Knowledge Base
-First, you need to process your documents and store them in the Pinecone index. Place your PDF files inside the Data/ directory.
 
-Then, run the store_index.py script. You only need to do this once.
-
-Bash
-
+```bash
+# run the following command to store embeddings to pinecone
 python store_index.py
-This will load the PDFs, create embeddings, and upload them to your "medicalbot" index in Pinecone.
+```
 
-Step 2: Run the Web Application
-Once the index is populated, start the Flask web server.
-
-Bash
-
+```bash
+# Finally run the following command
 python app.py
-Open your web browser and navigate to http://127.0.0.1:8080 to start chatting with your medical bot.
+```
+
+Now,
+```bash
+open up localhost:
