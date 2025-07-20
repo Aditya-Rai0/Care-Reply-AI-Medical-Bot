@@ -30,7 +30,7 @@ The project follows a RAG architecture:
 Clone the repository
 
 ```bash
-Project repo: https://github.com/
+git clone https://github.com/Aditya-Rai0/Care-Reply-AI-Medical-Bot.git
 ```
 ### STEP 01- Create a virtual environment after opening the repository
 
