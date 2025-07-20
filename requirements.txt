@@ -9,4 +9,6 @@ langchain_community
 numpy
 langchain-google-genai
 langchain_experimental
+gunicorn
+
 -e .
